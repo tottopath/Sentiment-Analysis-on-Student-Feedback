@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+
+        background:rgb(112, 154, 230);
+      }
+      a{
+       text-decoration: none;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      .topbarfx{
+       display: flex;
+       background: linear-gradient(90deg, rgb(86,195,252) 0%, rgb(128,138,236) 100%);
+       height: 3rem;
+       width: 75%;
+       align-self: flex-end;
+       margin: 0;
+       padding: 10px;
+       justify-content: flex-end;
+       align-items: center;
+       z-index: 2;
+       margin-left: auto;
+      }
+      .topbarfx >.uploadbutton{
+      display: flex;
+      border-radius: 50px;
+      border-style: hidden;
+      height: 30px;
+      width: 100px;
+      padding-left: 15px;
+      align-items: center;
+      background: linear-gradient(90deg, rgb(186,248,207) 0%, rgb(80,189,251) 100%);
+      color: rgb(37,83,128);
+      font-weight: bold;
+      }
+      .topbarfx >.downloadbutton{
+        display: flex;
+        border-radius: 50px;
+        border-style: hidden;
+        height: 30px;
+        width: 120px;
+        padding-left: 15px;
+        align-items: center;
+        background: linear-gradient(90deg, rgb(186,248,207) 0%, rgb(80,189,251) 100%);
+        color: rgb(37,83,128);
+        font-weight: bold;
+       }
+       .navbarfx{
+        display: flex;
+        background: linear-gradient(180deg, rgb(86,195,252) 0%, rgb(128,138,236) 100%);
+        flex-direction: column;
+        min-height: 100vh;
+        width: 25%;
+        top: 0;
+        /* left: 0; */
+        position: fixed;
+        
+       }
+      
+      .upcsvnav{
+       display: flex;
+       border-bottom-style: solid;
+       border-bottom-color: white;
+       border-bottom-width: 0.5px;
+       border-top-style: solid;
+       border-top-width: 0.5px;
+       border-top-color: white;
+       margin-top: 93%;
+       height: 80px;
+       text-align: center;
+       background: transparent;
+       align-items: center;
+       padding-left: 33%;
+       color: white;
+      }
+      
+      .dwcsvnav{
+        display: flex;
+        border-bottom-style: solid;
+        border-bottom-color: white;
+        border-bottom-width: 0.5px;
+        height: 80px;
+        text-align: center;
+        background: transparent;
+        align-items: center;
+        align-self: center;
+        padding-left: 33%;
+        color: white;
+       
+      }
+      .tdw{
+       color: white;
+       text-align: center;
+      }
+      
+      .datav {
+        background: #FFFFFF;
+        display: flex;
+        min-height: 93.5vh;
+        width: 75;
+        top: 0;
+        clear: both;
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+      }
+      .comment,
+      .predicted-sentiment {
+        text-align: center;
+        margin: 10px; /* Add spacing between the elements */
+      }
+      .datav:after {
+       content: "";
+       display: block;
+       clear: both;
+      }
+      .btns{
+        display: flex;
+        width: 75;
+        justify-content:space-evenly;
+        position: fixed;
+        top: 10%;
+        left: 29%;
+        z-index: 3;
+        gap: 35px;
+        
+      }
+      .barchartbtn{
+       display: flex;
+       width: 300px;
+       height: 110px;
+       border-radius: 13px;
+       background: #FBFAFF;
+       border-color: #F9EBC7;
+       border-left-width: 15px;
+       border-style: solid;
+      
+       color:black;
+       text-align: center;
+       align-items: center;
+       font-size: larger;
+       padding-left: 10%;
+      }
+      .piechartbtn{
+       display: flex;
+       width: 300px;
+       height: 110px;
+       border-radius: 13px;
+       background: #FBFAFF;
+       border-color: #B3EDE6;
+       border-left-width: 15px;
+       border-style: solid;
+       color:black;
+       text-align: center;
+       align-items: center;
+       font-size: larger;
+       padding-left: 10%;
+      }
+      .wordcloudbtn{
+      
+       display: flex;
+       width: 300px;
+       height: 110px;
+       border-radius: 13px;
+       background: #FBFAFF;
+       border-color: #B1C1E5;
+       border-left-width: 15px;
+       border-style: solid;
+       color:black;
+       text-align: center;
+       align-items: center;
+       font-size: larger;
+       padding-left: 10%;
+      }
+      
+      .graphs{
+       display: flex;
+       background: #FBFAFF;
+       height: 63%;
+       width: 65.7%;
+       position: fixed;
+       left:29%;
+       border-radius: 15px;
+       top:35%; 
+      }
+      img{
+       align-items: center;
+       position: absolute;
+       margin: 0;
+       padding: 0;
+       height: 29rem;
+       width: 29rem;
+       border-radius: 15px;
+      }
+      
+      h1{
+       color: white;
+       font-size: x-large;
+       font-weight: bolder;
+       display: flex;
+       position: fixed;
+       top: 15px;
+       left: 8%;
+      } 
+      .inptxt{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        
+      }
+      .inputbox{
+        display: flex;
+        position: fixed;
+        background: #FBFAFF;
+        height: 45%;
+        width: 73%;
+        left:26%;
+        border-radius: 15px;
+        border: hidden;
+        top:9%;
+        border: none;
+        outline: none;
+        text-align: center;
+        font-size: larger;
+      }
+      
+      .submitbutton{
+      position: fixed;
+      display: flex;
+      border-radius: 50px;
+      border-style: hidden;
+      left: 56%;
+      top: 57%;
+      height: 50px;
+      width: 180px;
+      background: linear-gradient(90deg, rgb(186,248,207) 0%, rgb(80,189,251) 100%);
+      color: rgb(37,83,128);
+      font-weight: bold;
+      font-size: large;
+      padding-left: 55px;
+      padding-top: 15px;
+      align-content: center;
+      }
+      
+      .output{
+          position: fixed;
+          display: flex;
+        background: #FBFAFF;
+        height: 30%;
+        width: 73%;
+        left:26%;
+        border-radius: 15px;
+        border: hidden;
+        top:27rem;
+        border: none;
+        outline: none;
+        text-align: center;
+        font-size: larger;
+        flex-direction: column;
+        align: center;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="topbarfx">
+    </div>
+    <div class="navbarfx">
+      <h1>Senti-Scan</h1>
+      <a href="{{ url_for('upload') }}"><span class="upcsvnav"><h3 class="tup">Upload CSV</h3>
+      </span></a>
+      <a href="{{ url_for('example') }}"><span class="dwcsvnav"><h3 class="tdw">Example input</h3></span></a>
+      <a href="{{ url_for('index') }}"><span class="dwcsvnav"><h3 class="tdw">Individual comments</h3></span></a>
+    </div>
+    <div class="datav">
+        
+    </div>
+
+    <form id="comment-form" action="/predict" method="POST">
+      <input type="text" name="comment" class="inputbox" placeholder="Type something...">
+      <button class="submitbutton" type="submit">Analyze</button>
+    </form>    
+    </input>
+    <div class="output">
+      {% if comment %}
+      <div class="comment">
+        <p>For the Comment: {{ comment }} </p>
+      </div>  
+      <div class="predicted-sentiment">
+        <p>Predicted Sentiment: {{ sentiment }}</p>
+      </div>
+    {% endif %}
+    </div>
+  </body>
+</html>
